@@ -1,0 +1,13 @@
+version: '3'
+
+vars:
+  PLANETILER_DOCKERFILE: Dockerfile.planetiler
+  PLANETILER_IMAGE: planetiler:latest
+  PMTILES_DIR: ./data/pmtiles
+
+tasks:
+  build-tiles:
+    desc: Build vector tiles using Planetiler
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
