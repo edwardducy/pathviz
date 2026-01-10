@@ -1,0 +1,11 @@
+FROM eclipse-temurin:25-jre
+
+WORKDIR /app
+
+RUN apt-get update && \
+    apt-get install -y wget \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN wget https://github.com/onthegomap/planetiler/releases/latest/download/planetiler.jar -O /app/planetiler.jar
+
+CMD ["java", "-jar", "/app/planetiler.jar"]
